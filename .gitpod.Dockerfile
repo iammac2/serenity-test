@@ -5,10 +5,11 @@ USER gitpod
 RUN bash -c ". /home/gitpod/.sdkman/bin/sdkman-init.sh &&     sdk install java 17.0.3-ms &&     sdk default java 17.0.3-ms"
 
 # Install Google Chrome Latest Stable
+RUN pwd
 RUN sudo apt-get update
 RUN sudo apt-get install -y wget
 RUN sudo wget -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN sudo apt-get install ./google-chrome-stable_current_amd64.deb
+RUN sudo apt-get install google-chrome-stable_current_amd64.deb
 RUN google-chrome --version
 
 # Install Chrome WebDriver
