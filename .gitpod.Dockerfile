@@ -8,14 +8,6 @@ RUN pwd
 RUN mkdir -p /workspace/serenity-test/tmp
 RUN ls -la /workspace/serenity-test/tmp
 
-# Install Google Chrome Latest Stable
-RUN sudo apt-get update
-RUN sudo apt-get install -y wget
-RUN sudo wget -O /workspace/serenity-test/tmp/google-chrome-stable_current_amd64.deb -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
-RUN sudo apt-get install -y /workspace/serenity-test/tmp/google-chrome-stable_current_amd64.deb
-RUN google-chrome --version
-RUN ls -la /workspace/serenity-test/tmp
-
 # Install Chrome WebDriver
 RUN CHROMEDRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE` && \
     mkdir -p /workspace/serenity-test/tmp && \
@@ -24,3 +16,13 @@ RUN CHROMEDRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RE
     #rm /tmp/chromedriver_linux64.zip && \
     chmod +x /workspace/serenity-test/tmp/chromedriver-$CHROMEDRIVER_VERSION/chromedriver && \
     sudo ln -fs /opt/chromedriver-$CHROMEDRIVER_VERSION/chromedriver /usr/local/bin/chromedriver
+
+# Install Google Chrome Latest Stable
+RUN sudo apt-get update
+RUN sudo apt-get install -y wget
+RUN sudo wget -O /workspace/serenity-test/tmp/google-chrome-stable_current_amd64.deb -q https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+RUN sudo apt-get install -y /workspace/serenity-test/tmp/google-chrome-stable_current_amd64.deb
+RUN google-chrome --version
+RUN ls -la /workspace/serenity-test/tmp
+
+
