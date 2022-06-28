@@ -1,6 +1,7 @@
 package test.java.pages;
 
 import net.serenitybdd.core.pages.PageObject;
+import org.openqa.selenium.support.FindBy;
 import net.thucydides.core.annotations.DefaultUrl;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.thucydides.core.annotations.WhenPageOpens;
