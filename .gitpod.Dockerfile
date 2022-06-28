@@ -20,7 +20,7 @@ RUN ls -la /workspace/serenity-test/tmp
 RUN CHROMEDRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RELEASE` && \
     mkdir -p /workspace/serenity-test/tmp && \
     curl -sS -o /workspace/serenity-test/tmp/chromedriver_linux64.zip http://chromedriver.storage.googleapis.com/$CHROMEDRIVER_VERSION/chromedriver_linux64.zip && \
-    unzip -qq /workspace/serenity-test/tmp/chromedriver_linux64.zip -d /opt/chromedriver-$CHROMEDRIVER_VERSION && \
+    unzip -qq /workspace/serenity-test/tmp/chromedriver_linux64.zip -d /workspace/serenity-test/tmp/chromedriver-$CHROMEDRIVER_VERSION && \
     #rm /tmp/chromedriver_linux64.zip && \
-    chmod +x /opt/chromedriver-$CHROMEDRIVER_VERSION/chromedriver && \
+    chmod +x /workspace/serenity-test/tmp/chromedriver-$CHROMEDRIVER_VERSION/chromedriver && \
     ln -fs /opt/chromedriver-$CHROMEDRIVER_VERSION/chromedriver /usr/local/bin/chromedriver
