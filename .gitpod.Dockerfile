@@ -15,7 +15,7 @@ RUN CHROMEDRIVER_VERSION=`curl -sS chromedriver.storage.googleapis.com/LATEST_RE
     unzip -qq /workspace/serenity-test/tmp/chromedriver_linux64.zip -d /workspace/serenity-test/tmp/chromedriver-$CHROMEDRIVER_VERSION && \
     #rm /tmp/chromedriver_linux64.zip && \
     chmod +x /workspace/serenity-test/tmp/chromedriver-$CHROMEDRIVER_VERSION/chromedriver && \
-    sudo ln -fs /opt/chromedriver-$CHROMEDRIVER_VERSION/chromedriver /usr/local/bin/chromedriver
+    sudo ln -fs /workspace/serenity-test/tmp/chromedriver-$CHROMEDRIVER_VERSION/chromedriver /usr/local/bin/chromedriver
 
 # Install Google Chrome Latest Stable
 RUN sudo apt-get update
