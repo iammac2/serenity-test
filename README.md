@@ -1,4 +1,4 @@
-# serenity-test
+# GitPod serenity-test
 Serenity Testing on GitPod example
 
 Open project in gitpod:
